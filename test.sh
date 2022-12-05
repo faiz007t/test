@@ -36,14 +36,6 @@ function ISP(){
     local result3=$(echo $result | python -m json.tool 2>/dev/null | grep 'region' | cut -f4 -d'"')
     local result4=$(echo $result | python -m json.tool 2>/dev/null | grep 'city' | cut -f4 -d'"')
     local result5=$(echo $result | python -m json.tool 2>/dev/null | grep 'isp' | cut -f4 -d'"')
-	
-    if [ -n "$result" ]; then
-        echo -n -e "${Font_Yellow} ===============[ Informations ]================${Font_Suffix}\n\n IP:\t\t\t\t${Font_Green}${result1}${Font_Suffix}\n Country:\t\t\t${Font_Green}${result2}${Font_Suffix}\n Region:\t\t\t\t${Font_Green}${result3}${Font_Suffix}\n City:\t\t\t\t${Font_Green}${result4}${Font_Suffix}\n ISP:\t\t\t\t${Font_Green}${result5}${Font_Suffix}\n\n${Font_Yellow} ==============[ Checking Sites ]===============${Font_Suffix}\n\n" && echo -e " ===============[ Informations ]================\n\n IP:\t\t\t\t${result1}\n Country:\t\t\t${result2}\n Region:\t\t\t\t${result3}\n City:\t\t\t\t${result4}\n ISP:\t\t\t\t${result5}\n\n ==============[ Checking Sites ]===============\n\n" >> ${LOG_FILE};
-        return;
-    fi
-    
-    echo -n -e "${Font_Yellow} ===============[ Informations ]================${Font_Suffix}\n\n IP:\t\t\t\t${Font_Red}No${Font_Suffix}\n Country:\t\t\t${Font_Red}No${Font_Suffix}\n Country2:\t\t\t${Font_Red}No${Font_Suffix}\n Region:\t\t\t\t${Font_Red}No${Font_Suffix}\n City:\t\t\t\t${Font_Red}No${Font_Suffix}\n ISP:\t\t\t\t${Font_Red}No${Font_Suffix}\n\n${Font_Yellow} ==============[ Checking Sites ]===============${Font_Suffix}\n\n" && echo -e " ===============[ Informations ]================\n\n IP:\t\t\t\tNo\n Country:\t\t\tNo\n Region:\t\t\t\tNo\n City:\t\t\t\tNo\n ISP:\t\t\t\tNo\n\n ==============[ Checking Sites ]===============\n\n" >> ${LOG_FILE};
-    return;
 }
 
 function InstallJQ() {

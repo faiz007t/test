@@ -104,3 +104,4 @@ else
     echo -e "${Font_SkyBlue}The current host does not support IPv4, skip...${Font_Suffix}" && echo "The current host does not support IPv4, skip..." >> ${LOG_FILE};
 fi
 echo -e "\n${Font_Yellow} ==================[ Finish ]===================${Font_Suffix}\n" && echo -e "\n ==================[ Finish ]===================$\n" >> ${LOG_FILE};
+ 
